@@ -1,0 +1,17 @@
+{
+  "name": "vuepress-theme-alisa",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vuepress dev examples",
+    "build": "vuepress build examples"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-medium-zoom": "^1.2.0",
+    "@vuepress/plugin-search": "^1.2.0",
+    "@vuepress/theme-blog": "^1.5.0",
+    "vuepress": "^1.2.0"
+  },
+  "license": "MIT"
+}
