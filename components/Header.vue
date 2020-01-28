@@ -1,25 +1,23 @@
 <template>
-  <section id="header-wrapper">
-    <header id="header">
-      <div class="header-wrapper">
-        <div class="title">
-          <NavLink link="/" class="home-link">{{ $site.title }} </NavLink>
-        </div>
-        <div class="header-right-wrap">
-          <ul v-if="$themeConfig.nav" class="nav">
-            <li
-              v-for="item in $themeConfig.nav"
-              :key="item.text"
-              class="nav-item"
-            >
-              <NavLink :link="item.link">{{ item.text }}</NavLink>
-            </li>
-          </ul>
-          <SearchBox />
-        </div>
+  <header id="header">
+    <div class="header-wrapper">
+      <div class="title">
+        <NavLink link="/" class="home-link">{{ $site.title }}</NavLink>
       </div>
-    </header>
-  </section>
+      <div class="header-right-wrap">
+        <ul v-if="$themeConfig.nav" class="nav">
+          <li
+                  v-for="item in $themeConfig.nav"
+                  :key="item.text"
+                  class="nav-item"
+          >
+            <NavLink :link="item.link">{{ item.text }}</NavLink>
+          </li>
+        </ul>
+        <SearchBox/>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -39,11 +37,10 @@ export default {
   top 0
   width 100vw
   box-sizing border-box
-  // background lighten(#3eaf7c, 90%)
   background-color #FFF
-  padding 20px 32px 20px
+  padding 10px 32px 10px
   margin auto
-  box-shadow 0 5px 20px rgba(0, 0, 0, 0.03), 0 6px 6px rgba(0, 0, 0, 0.05)
+  box-shadow 0 2px 10px rgba(0, 0, 0, .05)
   transition all 1s cubic-bezier(0.25, 0.8, 0.25, 1)
 
   ol, ul
@@ -51,10 +48,6 @@ export default {
     margin 0
     padding 0
 
-  &:hover
-    box-shadow 0 5px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.1)
-
-// border-bottom 5px solid lighten(#3eaf7c, 50%)
 .header-wrapper
   display flex
   line-height 40px
@@ -67,10 +60,9 @@ export default {
     margin 0
     letter-spacing 2px
     display block
-    text-transform uppercase
 
     a
-      color #000
+      color $textColor
       font-weight bold
       text-decoration none
 

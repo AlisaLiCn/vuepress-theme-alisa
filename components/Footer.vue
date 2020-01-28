@@ -1,112 +1,37 @@
 <template>
   <footer class="footer">
-    <div class="footer-left-wrap">
-      <ul v-if="contact" class="contact">
-        <li
-          v-for="item in contact"
-          :key="item.iconComponent"
-          class="contact-item"
-        >
-          <NavLink :link="item.link">
-            <component :is="item.iconComponent"></component>
-            {{ item.text }}
-          </NavLink>
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li class="footer-item">
+        {{ period }} By {{ $themeConfig.footer.author }}
+      </li>
+      <li class="footer-item">
+        Driven - <NavLink link="https://vuepress.org"> &nbsp;Vuepress&nbsp; </NavLink> | Theme - Alisa
+      </li>
 
-    <div class="footer-right-wrap">
-      <ul v-if="copyright" class="copyright">
-        <li v-for="item in copyright" :key="item.text" class="copyright-item">
-          <NavLink :link="item.link">{{ item.text }}</NavLink>
-        </li>
-      </ul>
-    </div>
+    </ul>
   </footer>
 </template>
 
 <script>
-import {
-  CodepenIcon,
-  FacebookIcon,
-  GithubIcon,
-  GitlabIcon,
-  GlobeIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  MailIcon,
-  MessageSquareIcon,
-  PhoneIcon,
-  TwitterIcon,
-} from 'vue-feather-icons'
 
 export default {
-  components: {
-    CodepenIcon,
-    FacebookIcon,
-    GithubIcon,
-    GitlabIcon,
-    GlobeIcon,
-    InstagramIcon,
-    LinkedinIcon,
-    MailIcon,
-    MessageSquareIcon,
-    PhoneIcon,
-    TwitterIcon,
+  data() {
+    return {
+      dateNow: new Date().getFullYear(),
+      footerList: [],
+    }
   },
-
   computed: {
-    contact() {
-      return (
-        (this.$themeConfig.footer && this.$themeConfig.footer.contact) ||
-        []
-      )
-        .map(({ type, link }) => {
-          return {
-            iconComponent: this.getIconComponentName(type),
-            link,
-          }
-        })
-        .filter(({ iconComponent }) => iconComponent)
-    },
-
-    copyright() {
-      return (
-        (this.$themeConfig.footer && this.$themeConfig.footer.copyright) || []
-      )
+    period() {
+      if (!this.$themeConfig) return ''
+      const nowDate = new Date().getFullYear()
+      return `@${this.$themeConfig.footer.since} - ${nowDate}`
     },
   },
-
-  methods: {
-    getIconComponentName(contactType) {
-      switch (contactType) {
-        case 'facebook':
-          return 'FacebookIcon'
-        case 'github':
-          return 'GithubIcon'
-        case 'gitlab':
-          return 'GitlabIcon'
-        case 'instagram':
-          return 'InstagramIcon'
-        case 'linkedin':
-          return 'LinkedinIcon'
-        case 'mail':
-          return 'MailIcon'
-        case 'messenger':
-          return 'MessageSquareIcon'
-        case 'phone':
-          return 'PhoneIcon'
-        case 'twitter':
-          return 'TwitterIcon'
-        case 'web':
-          return 'GlobeIcon'
-        case 'codepen':
-          return 'CodepenIcon'
-        default:
-          return ''
-      }
-    },
+  created() {
   },
+
+  methods: {},
 }
 </script>
 
@@ -117,81 +42,41 @@ ol, ul
   padding 0
 
 .footer
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
   height 60px
   box-sizing border-box
-  background-color #000
-  color #FFF
-  display flex
-  padding 15px 32px
+  background-color #2c3e50
+  padding 50px 32px
 
-  .footer-left-wrap
-    line-height 30px
-    flex 1
+  .footer-item
     display flex
-
-    .contact
-      display flex
-
-      .contact-item
-        flex 1
-        margin-right 10px
-
-        a
-          font-size 12px
-          color rgba(255, 255, 255, 0.45)
-          text-decoration none
-          transition color 0.3s
-
-          &:hover
-            color #FFF
-
-  .footer-right-wrap
-    flex 1
-    display flex
-    align-items center
     justify-content center
+    align-items center
+    padding 5px 10px
+    line-height 12px
+    font-size 14px
+    color rgba(255, 255, 255, 0.75)
+    transition color 0.3s
 
-    @media (min-width: $MQNarrow)
-      justify-content flex-end
+    &:last-child
+      border-right none
 
-    .copyright
-      display flex
-      justify-content flex-end
+    a
+      font-size 14px
+      color rgba(255, 255, 255, 0.75)
+      text-decoration none
+      transition color 0.3s
 
-      .copyright-item
-        flex 0 0 auto
-        padding 0 10px
-        position relative
-        line-height 12px
-        border-right 1px solid rgba(255, 255, 255, 0.6)
-
-        &:last-child
-          border-right none
-
-        a
-          font-size 12px
-          color rgba(255, 255, 255, 0.6)
-          text-decoration none
-          transition color 0.3s
-
-          &:hover
-            color rgba(255, 255, 255, 0.9)
+      &:hover
+        color #fff
 
 @media (max-width: $MQMobile)
   .footer
-    height 100px
-    flex-direction column
-
-    .footer-left-wrap
-      align-items center
-      justify-content center
-
-    .footer-right-wrap
-      .copyright
-        display block
-
-        .copyright-item
-          line-height 1
-          border-right none
-          text-align center
+    .footer-item
+      line-height 1
+      border-right none
+      text-align center
 </style>

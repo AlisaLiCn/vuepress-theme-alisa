@@ -11,14 +11,6 @@
           <!-- <Content :page-key="page.key" slot-key="intro"/>-->
         </p>
 
-        <div v-if="page.frontmatter.author" class="ui-post-author">
-          <NavigationIcon />
-          <span
-            >{{ page.frontmatter.author }} in
-            {{ page.frontmatter.location }}</span
-          >
-        </div>
-
         <div v-if="page.frontmatter.date" class="ui-post-date">
           <ClockIcon />
           <span>{{ resolvePostDate(page.frontmatter.date) }}</span>
@@ -106,7 +98,7 @@ export default {
 
   a
     cursor pointer
-    color #000
+    color $textColor
     transition all 0.2s
     text-decoration none
 

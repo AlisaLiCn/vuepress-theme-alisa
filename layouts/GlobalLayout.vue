@@ -6,7 +6,9 @@
       @toggle-sidebar="isMobileHeaderOpen = !isMobileHeaderOpen"
     />
     <div class="content-wrapper" @click="isMobileHeaderOpen = false">
-      <DefaultGlobalLayout />
+      <div class="content-inner">
+        <DefaultGlobalLayout />
+      </div>
     </div>
     <Footer />
   </div>
@@ -42,10 +44,13 @@ export default {
 
 <style lang="stylus">
 .content-wrapper
-  padding 160px 15px 80px 15px
-  min-height calc(100vh - 80px - 60px - 160px)
-  max-width 740px
-  margin 0 auto
+  padding-top 100px
+  min-height calc(100vh - 60px - 100px - 40px)
+  background-color #f9f9f9
+  .content-inner
+    padding 0 15px 80px
+    max-width 740px
+    margin 0 auto
 
 @media (max-width: $MQMobile)
   .content-wrapper

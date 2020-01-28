@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'A simple vuepress blog theme',
+  title: 'Alisa\'s blog',
   theme: require.resolve('../../'),
   themeConfig: {
     /**
@@ -27,67 +27,13 @@ module.exports = {
      * Ref: https://vuepress-theme-blog.ulivz.com/#footer
      */
     footer: {
-      contact: [
-        {
-          type: 'codepen',
-          link: '#',
-        },
-        {
-          type: 'facebook',
-          link: '#',
-        },
-        {
-          type: 'github',
-          link: 'https://github.com/ulivz',
-        },
-        {
-          type: 'gitlab',
-          link: '#',
-        },
-        {
-          type: 'instagram',
-          link: '#',
-        },
-        {
-          type: 'linkedin',
-          link: '#',
-        },
-        {
-          type: 'mail',
-          link: '#',
-        },
-        {
-          type: 'messenger',
-          link: '#',
-        },
-        {
-          type: 'phone',
-          link: '#',
-        },
-        {
-          type: 'twitter',
-          link: 'https://twitter.com/_ulivz',
-        },
-        {
-          type: 'web',
-          link: '#',
-        }
-      ],
-      copyright: [
-        {
-          text: 'Privacy Policy',
-          link: 'https://policies.google.com/privacy?hl=en-US',
-        },
-        {
-          text: 'MIT Licensed | Copyright © 2018-present Vue.js',
-          link: '',
-        },
-      ],
+      since: '2018',
+      author: 'Alisa',
     },
 
-    modifyBlogPluginOptions (blogPluginOptions) {
+    modifyBlogPluginOptions(blogPluginOptions) {
       const sitemap = {
-        hostname: 'https://yourdomain'
+        hostname: 'https://yourdomain',
       }
 
       const comment = {
@@ -101,11 +47,11 @@ module.exports = {
       }
 
       const newsletter = {
-        endpoint:'https://billyyyyy3320.us4.list-manage.com/subscribe/post?u=4905113ee00d8210c2004e038&amp;id=bd18d40138'
+        endpoint: 'https://billyyyyy3320.us4.list-manage.com/subscribe/post?u=4905113ee00d8210c2004e038&amp;id=bd18d40138',
       }
 
       return { ...blogPluginOptions, sitemap, comment }
-    }
+    },
 
     // paginationComponent: 'SimplePagination'
   },
