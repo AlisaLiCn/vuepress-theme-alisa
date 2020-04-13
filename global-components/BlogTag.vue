@@ -25,8 +25,8 @@ export default {
   text-align left
   box-sizing border-box
   transition background-color 0.3s
-  color #000
-  border 1px solid #000
+  color #333
+  border 1px solid #333
   text-decoration none
   transition all 0.5s
 

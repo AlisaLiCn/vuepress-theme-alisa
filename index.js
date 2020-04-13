@@ -15,7 +15,7 @@ module.exports = (themeConfig, ctx) => {
         dirname: '_posts',
         path: '/',
         pagination: {
-          perPagePosts: 2,
+          lengthPerPage: 10,
         },
       },
     ],
@@ -28,7 +28,7 @@ module.exports = (themeConfig, ctx) => {
         frontmatter: { title: 'Tag' },
         itemlayout: 'Tag',
         pagination: {
-          perPagePosts: 3,
+          lengthPerPage: 3,
         },
       },
     ],

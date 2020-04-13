@@ -1,5 +1,6 @@
 <template>
   <Sticker v-if="visible" class="vuepress-toc" v-bind="$attrs">
+  <div v-if="visible" class="vuepress-toc" v-bind="$attrs">
     <div
       v-for="(item, index) in $page.headers"
       ref="chairTocItem"
@@ -12,6 +13,7 @@
     >
       <a :href="`#${item.slug}`" :title="item.title">{{ item.title }}</a>
     </div>
+  </div>
   </Sticker>
 </template>
 
@@ -137,16 +139,10 @@ export default {
   display none !important
 
 .vuepress-toc
-  position fixed
   display none
-  max-height 100vh
-  max-width 220px
+  max-height 500px
   overflow-y auto
-  padding-top $navbarHeight
-  top 0
-  right 10px
   box-sizing border-box
-  /* background: #fff; */
   z-index 0
 
   .vuepress-toc-item
@@ -161,7 +157,7 @@ export default {
       color #2c3e50
       width 100%
       box-sizing border-box
-      font-size 12px
+      font-size 14px
       font-weight 400
       text-decoration none
       transition color 0.3s

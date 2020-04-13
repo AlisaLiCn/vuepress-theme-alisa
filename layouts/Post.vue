@@ -1,39 +1,65 @@
 <template>
   <div id="vuepress-theme-blog__post-layout">
     <div class="vuepress-blog-theme-content">
+      <div class="content-title">
+        {{ $page.title }}
+      </div>
       <Content/>
       <Newsletter v-if="$service.email.enabled"/>
       <hr/>
-      <Comment/>
+      <!--<Comment/>-->
     </div>
-    <Toc/>
+    <div class="vuepress-blog-theme-aside">
+      <!--<tag-list></tag-list>-->
+      <Toc/>
+    </div>
   </div>
 </template>
 
 <script>
-import Toc from '@theme/components/Toc.vue'
-import { Comment } from '@vuepress/plugin-blog/lib/client/components'
+import Toc from '@theme/components/Toc.vue';
+import TagList from '@theme/components/TagList.vue';
+import { Comment } from '@vuepress/plugin-blog/lib/client/components';
 
 export default {
   components: {
     Toc,
+    TagList,
     Comment,
     Newsletter: () => import('@theme/components/Newsletter.vue'),
   },
-}
+  created() {
+    console.log('list', this);
+  },
+};
 </script>
 
 <style lang="stylus">
 @require '../styles/wrapper.styl'
 
-.vuepress-blog-theme-content
-  @extend $wrapper
-  font-size 16px
-  letter-spacing 0px
-  font-family: "PingFangSC-Regular", tahoma, arial, "Hiragino Sans GB", sans-serif;
-  color #2c3e50
-  position relative
+#vuepress-theme-blog__post-layout
+  display flex
+  justify-content flex-start
 
-  @media (min-width: $MQNarrow)
-    box-shadow 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.07)
+  .vuepress-blog-theme-content
+    flex-shrink 0
+    width 740px
+    margin-right 20px
+    background-color #fff
+    font-size 15px
+    letter-spacing 0
+    color $textColor
+    @media (min-width: $MQNarrow)
+      padding 1.5rem
+    @media (max-width: $MQMobileNarrow)
+      padding 1rem
+    .content__default:not(.custom) > *:first-child
+      margin-top 2rem
+    .content-title
+      font-size 32px
+      font-weight 600
+
+  .vuepress-blog-theme-aside
+    width 100%
+
 </style>

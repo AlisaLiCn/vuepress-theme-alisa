@@ -1,5 +1,6 @@
 module.exports = {
-  title: 'Alisa\'s blog',
+  // title: 'Alisa\'s blog',
+  title: '测试测试啊',
   theme: require.resolve('../../'),
   themeConfig: {
     /**
@@ -11,16 +12,8 @@ module.exports = {
      */
     nav: [
       {
-        text: 'Blog',
+        text: 'Home',
         link: '/',
-      },
-      {
-        text: 'Tags',
-        link: '/tag/',
-      },
-      {
-        text: 'About',
-        link: '/about/',
       },
     ],
     /**

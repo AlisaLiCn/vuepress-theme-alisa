@@ -1,16 +1,16 @@
 <template>
   <div id="vuepress-theme-blog__global-layout">
-    <Header />
+    <Header/>
     <MobileHeader
-      :is-open="isMobileHeaderOpen"
-      @toggle-sidebar="isMobileHeaderOpen = !isMobileHeaderOpen"
+            :is-open="isMobileHeaderOpen"
+            @toggle-sidebar="isMobileHeaderOpen = !isMobileHeaderOpen"
     />
     <div class="content-wrapper" @click="isMobileHeaderOpen = false">
       <div class="content-inner">
-        <DefaultGlobalLayout />
+        <DefaultGlobalLayout/>
       </div>
     </div>
-    <Footer />
+    <Footer/>
   </div>
 </template>
 
@@ -44,13 +44,11 @@ export default {
 
 <style lang="stylus">
 .content-wrapper
-  padding-top 100px
-  min-height calc(100vh - 60px - 100px - 40px)
-  background-color #f9f9f9
+  min-height calc(100vh - 100px)
   .content-inner
-    padding 0 15px 80px
-    max-width 740px
-    margin 0 auto
+    margin 20px auto
+    width 1140px
+    min-height 600px
 
 @media (max-width: $MQMobile)
   .content-wrapper

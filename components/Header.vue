@@ -32,16 +32,13 @@ export default {
 @import '~@app/style/config'
 
 #header
-  z-index 12
-  position fixed
-  top 0
-  width 100vw
-  box-sizing border-box
+  position relative
+  height $headerHeight
+  line-height $headerHeight
   background-color #FFF
-  padding 10px 32px 10px
-  margin auto
-  box-shadow 0 2px 10px rgba(0, 0, 0, .05)
-  transition all 1s cubic-bezier(0.25, 0.8, 0.25, 1)
+  // box-shadow 0 2px 6px 0 rgba(0, 64, 128, .05)
+  border-bottom #f0f0f0
+  z-index 12
 
   ol, ul
     list-style none
@@ -50,20 +47,19 @@ export default {
 
 .header-wrapper
   display flex
-  line-height 40px
-  height 40px
+  align-items center
+  width 1200px
+  margin 0 auto
 
   .title
-    /* flex 0 0 200px */
-    color #000
-    font-size 30px
+    /*flex 0 0 200px */
+    font-size 20px
     margin 0
     letter-spacing 2px
     display block
 
     a
-      color $textColor
-      font-weight bold
+      color $accentColor
       text-decoration none
 
   .header-right-wrap
@@ -75,19 +71,22 @@ export default {
       flex 0 0 auto
       display flex
       margin 0
-      align-items end
+      align-items center
 
       .nav-item
         margin-left 20px
 
         a
-          font-size 20px
-          // color lighten(#3eaf7c, 30%)
+          font-size 16px
+          color #555
           text-decoration none
           transition color 0.3s
+          &:hover
+            color $accentColor
 
     .search-box
       margin-left 20px
+      margin-right 0
 
       input
         border-radius 5px
@@ -96,15 +95,15 @@ export default {
 
         &:hover
           border 1px solid $accentColor
-          box-shadow 0 0 5px $accentColor
+          box-shadow 0 0 2px $accentColor
 
       .suggestions
-        border 1px solid #000
+        border 1px solid #333
         top 40px
         right 0
 
         a
-          color #000
+          color #333
           text-decoration none
 
           &.focused
