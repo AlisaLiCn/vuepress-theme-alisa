@@ -7,7 +7,7 @@
       <Content/>
       <Newsletter v-if="$service.email.enabled"/>
       <hr/>
-      <!--<Comment/>-->
+      <Comment/>
     </div>
     <div class="vuepress-blog-theme-aside">
       <!--<tag-list></tag-list>-->

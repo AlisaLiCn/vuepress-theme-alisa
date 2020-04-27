@@ -5,9 +5,10 @@ module.exports = (themeConfig, ctx) => {
       typeof themeConfig.summaryLength === 'number'
         ? themeConfig.summaryLength
         : 200,
-  })
+  });
 
-  const { modifyBlogPluginOptions } = themeConfig
+  const { modifyBlogPluginOptions } = themeConfig;
+
   const defaultBlogPluginOptions = {
     directories: [
       {
@@ -32,11 +33,12 @@ module.exports = (themeConfig, ctx) => {
         },
       },
     ],
-  }
+  };
+
   const blogPluginOptions =
     typeof modifyBlogPluginOptions === 'function'
       ? modifyBlogPluginOptions(defaultBlogPluginOptions)
-      : defaultBlogPluginOptions
+      : defaultBlogPluginOptions;
 
 
   return {
@@ -55,5 +57,5 @@ module.exports = (themeConfig, ctx) => {
         ? themeConfig.paginationComponent
         : 'Pagination',
     },
-  }
-}
+  };
+};

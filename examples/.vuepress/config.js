@@ -27,25 +27,26 @@ module.exports = {
     modifyBlogPluginOptions(blogPluginOptions) {
       const sitemap = {
         hostname: 'https://yourdomain',
-      }
+      };
 
       const comment = {
-        service: 'disqus',
-        shortname: 'vuepress-plugin-blog',
-        // service: 'vssue',
-        // owner: 'You',
-        // repo: 'Your repo',
-        // clientId: 'Your clientId',
-        // clientSecret: 'Your clientSecret',
-      }
+        // service: 'disqus',
+        // shortname: 'vuepress-plugin-blog',
+        service: 'vssue',
+        clientId: 'db3ea8997caf13507157',
+        clientSecret: 'e116b947c38704ebe1ba91a893151a2d9eabd312',
+        repo: 'blog',
+        owner: 'alisalicn',
+        admin: ['alisalicn'],
+      };
 
       const newsletter = {
         endpoint: 'https://billyyyyy3320.us4.list-manage.com/subscribe/post?u=4905113ee00d8210c2004e038&amp;id=bd18d40138',
-      }
+      };
 
-      return { ...blogPluginOptions, sitemap, comment }
+      return { ...blogPluginOptions, sitemap, comment };
     },
 
     // paginationComponent: 'SimplePagination'
   },
-}
+};

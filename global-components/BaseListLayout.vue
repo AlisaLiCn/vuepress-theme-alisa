@@ -163,7 +163,7 @@ export default {
   display flex
   align-items center
   font-size 12px
-  color rgba(0, 0, 0, 0.54)
+  color rgba(0, 0, 0, 0.8)
   font-weight 200
 
   svg
