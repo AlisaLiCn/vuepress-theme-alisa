@@ -15,7 +15,6 @@
           </p>
 
           <div v-if="page.frontmatter.date" class="ui-post-date">
-            <!--<ClockIcon/>-->
             <span>{{ formatPostDate(page.frontmatter.date) }}</span>
             <span class="ui-post-category">{{ page.frontmatter.category }}</span>
           </div>
@@ -53,7 +52,7 @@ export default {
     return {
       websiteList: [
         { name: 'Github', url: 'https://github.com/alisalicn' },
-        { name: 'Weibo', url: 'https://github.com/alisalicn' },
+        { name: 'Weibo', url: 'https://weibo.com/1841869237/profile' },
         { name: 'Wechat', url: 'https://github.com/alisalicn' },
       ],
     };
