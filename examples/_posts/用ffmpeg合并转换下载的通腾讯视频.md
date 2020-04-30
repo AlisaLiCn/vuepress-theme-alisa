@@ -6,7 +6,7 @@ tags: video
 ---
 
 # 问题描述
-作为腾讯视频‘尊贵’的VIP（所以没去看盗版庆余年），想要保存一些比较喜欢的剧集，留待之后观看或作为剪辑素材使用，但目前在腾讯下载的视频是被分割成的数个ts视频片段。  
+作为腾讯视频‘尊贵’的VIP（所以没去看盗版庆余年），想要保存一些比较喜欢的剧集，留待之后观看或作为剪辑素材使用，但目前在腾讯下载的视频是被分割成的数个ts视频片段。
 所以研究了一下如何在`Mac`上合并这些ts文件，并最终转换为mp4文件。
 
 # 所用工具
@@ -15,7 +15,7 @@ tags: video
 
 # 操作步骤
 ## 1. 安装ffmpeg
-Mac上使用`homebrew`(或者到[官网](https://www.ffmpeg.org/)下载)安装`ffmpeg`  
+Mac上使用`homebrew`(或者到[官网](https://www.ffmpeg.org/)下载)安装`ffmpeg`
 ```
 brew install ffmpeg
 ```
@@ -56,7 +56,7 @@ try {
 
         // ts文件路径
         const videoPath = path.join(dirPath, videoName)
-        
+
         // 移动文件到与.m3u8同级的目录
         fs.renameSync(videoPath, path.join(__dirname, videoName))
 
@@ -86,16 +86,16 @@ ffmpeg -i .m3u8 -c copy new.mp4
 回车后终于得到了无损完整的视频`new.mp4`(可以自行更改命名)✌️
 
 ## 关于ffmpeg
-ffmpeg是一款功能很强大的工具，可以处理音视频，例如格式转换、合成拆分、还能从视频中截图，等等。深入学习的话，感觉能get到很多新技能。  
-这里用到的ffmpeg命令行参数：  
+ffmpeg是一款功能很强大的工具，可以处理音视频，例如格式转换、合成拆分、还能从视频中截图，等等。深入学习的话，感觉能get到很多新技能。
+这里用到的ffmpeg命令行参数：
 
 - -i: input file url 指定输入文件，这里的.m3u8中就指定了输入文件的清单。可以用编辑器打开查看。
-- -c: [:stream_specifier] codec (input/output,per-stream) 应该是指定编码格式相关的  
+- -c: [:stream_specifier] codec (input/output,per-stream) 应该是指定编码格式相关的
 
 这里的`-c copy`就是直接拷贝原视频的编码格式，最后输出`new.mp4`文件。
 
 # 总结
-`ffmpeg`的安装貌似有点费时。  
+`ffmpeg`的安装貌似有点费时。
 
 开始时看到有些文章里是先用
 

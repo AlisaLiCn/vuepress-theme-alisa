@@ -1,6 +1,5 @@
 module.exports = {
-  // title: 'Alisa\'s blog',
-  title: '测试测试啊',
+  title: 'Alisa\'s blog',
   theme: require.resolve('../../'),
   themeConfig: {
     /**
