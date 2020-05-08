@@ -175,4 +175,13 @@ export default {
 .ui-post-category
   color $accentColor
   font-size 14px
+
+@media (max-width: $MQMobile)
+  #base-list-layout
+    display block
+    .base-list-left
+      width calc(100% - 20px)
+      padding 10px
+    .base-list-right
+      display none
 </style>

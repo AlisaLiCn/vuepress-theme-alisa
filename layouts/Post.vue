@@ -62,4 +62,13 @@ export default {
   .vuepress-blog-theme-aside
     width 100%
 
+@media (max-width: $MQMobile)
+  #vuepress-theme-blog__post-layout
+    .vuepress-blog-theme-content
+      width calc(100% - 2rem)
+      padding 1rem
+      margin-right 0
+    .vuepress-blog-theme-aside
+      display none
+
 </style>

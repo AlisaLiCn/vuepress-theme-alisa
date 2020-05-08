@@ -21,6 +21,7 @@ module.exports = {
     footer: {
       since: '2018',
       author: 'Alisa',
+      icp: '京ICP备18061403号-1'
     },
 
     modifyBlogPluginOptions(blogPluginOptions) {
