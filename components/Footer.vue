@@ -5,36 +5,44 @@
         {{ period }} By {{ $themeConfig.footer.author }}
       </li>
       <li class="footer-item">
+        <NavLink link="http://www.beian.miit.gov.cn" target="_blank">{{ icp }}</NavLink>
+      </li>
+      <li class="footer-item">
         Driven -
         <NavLink link="https://vuepress.vuejs.org/"> &nbsp;Vuepress&nbsp;</NavLink>
         | Theme - Alisa
       </li>
-
     </ul>
   </footer>
 </template>
 
 <script>
 
+import NavLink from '../global-components/NavLink';
+
 export default {
+  components: { NavLink },
   data() {
     return {
       dateNow: new Date().getFullYear(),
       footerList: [],
-    }
+    };
   },
   computed: {
     period() {
-      if (!this.$themeConfig) return ''
-      const nowDate = new Date().getFullYear()
-      return `@${this.$themeConfig.footer.since} - ${nowDate}`
+      if (!this.$themeConfig) return '';
+      const nowDate = new Date().getFullYear();
+      return `@${this.$themeConfig.footer.since} - ${nowDate}`;
+    },
+    icp() {
+      return this.$themeConfig.footer.icp;
     },
   },
   created() {
   },
 
   methods: {},
-}
+};
 </script>
 
 <style lang="stylus" scoped>
