@@ -62,7 +62,6 @@ export default {
 
     .mobile-home-link
       text-decoration none
-      text-transform uppercase
       color #222
       font-weight bold
 
