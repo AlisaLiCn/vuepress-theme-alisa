@@ -169,6 +169,5 @@ chrome.cookies.get({
 ## 总结
 Chrome扩展与web之间通信，还有一些其他方式，但个人认为按照官方文档中推荐的方式比较容易使用。
 
-在开发测试的过程中，如果担心扩展的ID值发生变化，可以在Chrome的Dashboard中建立好应用后，把生成的public key的值配置到manifest.json的key字段中，这样就能保证开发过程中也能生成唯一固定的的ID了。但现在新版的Dashboard改版后好像把public key隐藏掉了...
 
-如有其它的开发技巧，还请看到这篇文章的人赐教哇~
+在实际开发时，如果担心扩展的id值发生变化，可以在`background.js`中利用`chrome.runtime.id`拿到当前扩展的id，通过`content.js`发送请求事件进行获取，最后可以以元素属性的值嵌入到HTML中，这样在WEB中就可以拿到啦~
