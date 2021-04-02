@@ -1,0 +1,22 @@
+{
+  "name": "vuepress-theme-alisa",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vuepress dev examples",
+    "build": "vuepress build examples"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-medium-zoom": "^1.2.0",
+    "@vuepress/plugin-nprogress": "1.0.0",
+    "@vuepress/plugin-search": "^1.2.0",
+    "dayjs": "^1.8.19",
+    "remove-markdown": "^0.3.0",
+    "vue-feather-icons": "^4.21.0",
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
+  },
+  "license": "MIT"
+}
